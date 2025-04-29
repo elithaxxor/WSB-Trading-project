@@ -81,6 +81,13 @@ The app will be available at [http://localhost:5000](http://localhost:5000) by d
 - **Documentation:**
   - Integrate summarized guide and provide external links for each indicator.
 
+## Microservice Integration: Meme-Coin Analyzer (2025-04-29)
+
+- The project will integrate the meme-coin-resilience-analyzer as a separate microservice.
+- The analyzer service will communicate with the main backend via REST API endpoints.
+- This approach was chosen for its modularity, scalability, and future-proofing.
+- See the Changelog for decision rationale and progress updates.
+
 ## Recent Updates (2025-04-29)
 
 - Repository migrated to new GitHub location.

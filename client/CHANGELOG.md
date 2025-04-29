@@ -12,6 +12,12 @@
   - Clearer build, deployment, and usage instructions
   - New section on rooms for improvement
 
+#### Microservice Integration Kickoff
+- Chose microservice architecture for meme-coin-resilience-analyzer integration.
+- Will deploy analyzer as a separate service, communicating via REST API.
+- Benefits: modularity, scalability, isolation, tech stack flexibility.
+- See README.md for updated architecture and integration plan.
+
 ### 2025-04-27
 
 #### Major Improvements
