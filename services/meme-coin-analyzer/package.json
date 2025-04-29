@@ -1,0 +1,11 @@
+{
+  "name": "meme-coin-analyzer",
+  "version": "0.1.0",
+  "description": "Microservice for meme-coin resilience analysis, exposing REST API endpoints for WSB-Trading integration.",
+  "main": "main.py",
+  "dependencies": {
+    "fastapi": "*",
+    "uvicorn": "*",
+    "pydantic": "*"
+  }
+}
