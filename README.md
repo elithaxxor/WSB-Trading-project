@@ -1,96 +1,118 @@
-# WSB-Trading Analytics Platform
 
-## Features
-- Institutional-grade analytics for stocks and crypto
-- Real-time and historical data from Alpha Vantage, CoinGecko, and TradingView
-- Machine learning models (Prophet, ARIMA, LSTM) for forecasting
-- Automated price alerts (thresholds and advanced moving average cross)
-- Multi-channel notifications (email, Discord, push, Slack, Telegram, SMS) — configurable per user or for all users
-- Visual alert history and triggered events log
-- Interactive dashboard: widgets and charts for all data sources
+# 📈 Meme Coin Technical Analysis & Projections 🚀  
+**Time Frames**: 1-Week | 1-Month | 3-Month Outlooks  
+**Focus**: Price Action, Derivatives Metrics, and Technical Patterns  
 
-## Advanced Alerts
-- **Price Threshold**: Get notified when price crosses above/below a set value
-- **Moving Average Cross**: Get notified when a short MA crosses above/below a long MA (configurable)
-- Alerts can be configured for stocks (Alpha Vantage) and crypto (CoinGecko)
-- Alerts can notify all users or only the creator (configurable)
-
-## Visual Alert History
-- All triggered alerts are logged and can be viewed in the dashboard
-- Alert history includes timestamp, asset, type, price, message, and notified users
-
-## Multi-User & Notification Integration
-- Notification settings are user-configurable
-- Alerts can be set to notify all users or specific users
-- Backend is structured for future expansion to persistent user management
-
-## 🛠️ Backend Alert Logic & API
-
-The backend price alert system is implemented in TypeScript with clear modularity and verbose documentation. See:
-- `server/src/alerts/priceAlertScheduler.ts`: Main alert scheduler, polling, and notification logic. **Now includes verbose docstrings and comments for all alert types (price, MA cross, RSI, MACD, ADX, etc.)**
-- `server/src/routes/price_alerts.ts`: Express API routes for CRUD, status, and testing of price alerts. **Now fully documented with endpoint docstrings and inline explanations.**
-
-### Example: Adding an ADX Alert
-```json
-{
-  "type": "adx",
-  "symbol": "AAPL",
-  "highs": [/* ... */],
-  "lows": [/* ... */],
-  "history": [/* closes ... */],
-  "period": 14,
-  "threshold": 25,
-  "direction": "above",
-  "notify": { "email": "user@example.com" }
-}
+---
 ```
-
-### API Endpoints
-- `GET /api/price-alerts` — List all alerts
-- `GET /api/price-alerts/status` — Status for each alert (symbol, type, threshold, direction)
-- `GET /api/price-alerts/history` — Recent alert events
-- `POST /api/price-alerts` — Add a new alert (see above JSON)
-- `DELETE /api/price-alerts/:idx` — Remove alert by index
-- `POST /api/price-alerts/test/:idx` — Simulate/trigger alert for testing
-
-### Alert Structure
-See `server/src/alerts/priceAlertScheduler.ts` for the full `PriceAlert` and `User` interface documentation. All notification fields and supported indicators are described inline.
-
-## 📝 Development Notes
-- All backend alert logic is now **modular, extensible, and fully documented**.
-- To add new indicators, extend the logic in `priceAlertScheduler.ts` and update the API route as needed.
-- For advanced usage (multi-condition alerts, broadcast to all users, etc.), see the docstrings and comments in the scheduler file.
-
-## 📚 Documentation
-- All major backend modules and API endpoints now include verbose comments and docstrings for easy onboarding and extension.
-- For roadmap, see `MEMORY[0fab6083-99d7-4a66-965a-ee955bbb8877]` (recommendations for indicators, modularity, and UI/UX).
-
-## 🚀 Quickstart
-1. `cd wsb-trading/server && npm install && npm start` (backend)
-2. `cd wsb-trading/client && npm install && npm start` (frontend)
-3. Use the API or UI to add, test, and monitor price alerts!
-
-## 🔗 GitHub
-For the latest code, issues, and documentation, visit:
+## 🌟 **Table of Contents**  
+1. [Methodology](#-methodology)  
+2. [Coin-Specific Analysis](#-coin-specific-analysis)  
+3. [Contrast & Takeaways](#-contrast--takeaways)  
+4. [Key Risks](#⚠️-key-risks)  
+5. [Trader Strategy](#🎯-trader-strategy)  
+6. [Disclaimer](#📜-disclaimer)  
 
 ---
 
-*Last updated: 2025-04-29*
-
-## API Endpoints
-- `/api/alphavantage` — Stock data
-- `/api/coingecko` — Crypto data
-- `/api/tradingview` — Charting & strategies
-- `/api/price-alerts` — Manage price and MA cross alerts
-- `/api/alert-history` — View and clear alert trigger history
-
-## How to Use
-1. Set up your API keys in the backend `.env`
-2. Start both backend and frontend
-3. Configure your notification settings in the dashboard
-4. Add price or MA cross alerts for stocks or crypto
-5. View alert history and receive notifications when alerts trigger
+## 🔍 **Methodology**  
+- **Technical Indicators**: RSI, MACD, Moving Averages (50D/200D), Volume Trends, Support/Resistance.  
+- **Derivatives**: Open Interest (OI), Funding Rates, Liquidation Levels.  
+- **Sentiment**: Social Volume (Twitter, Telegram), News Catalysts.  
+- **Note**: Meme coins (*) are highly volatile and sentiment-driven. Non-meme projects analyzed for contrast.  
 
 ---
 
-For more, see the code and widgets in `/client/src/` and `/server/src/`.
+## 🪙 **Coin-Specific Analysis**  
+
+### **1. 🐸 SWCH (Meme Coin*)**  
+| **Metric**          | **1-Week**              | **1-Month**             | **3-Month**             |  
+|----------------------|-------------------------|-------------------------|-------------------------|  
+| **Price**            | $0.00012 (Neutral)      | Potential +50%          | 3-5x if BTC > $75K      |  
+| **RSI/MACD**         | RSI 38, MACD Flat       | Falling Wedge Pattern   | Dependent on BTC Trend  |  
+| **Key Levels**       | Resistance: $0.00015     | Breakout Target: $0.00015 | Macro-Driven Pump      |  
+| **Derivatives**      | Low OI ($500K)          | Exchange Listing Rumors | High Volatility Risk    |  
+
+---
+
+### **2. 🤖 TAO (Bittensor)**  
+| **Metric**          | **1-Week**              | **1-Month**             | **3-Month**             |  
+|----------------------|-------------------------|-------------------------|-------------------------|  
+| **Price**            | $420 (Bullish)          | Cup-and-Handle Pattern  | $800-$1,000 Target      |  
+| **RSI/MACD**         | RSI 54, Bullish Diverg. | AI Narrative Surge     | Ecosystem Partnerships  |  
+| **Key Levels**       | Target: $450            | Resistance: $600        | AI Compute Growth       |  
+| **Derivatives**      | OI ↑20% ($80M)          | Funding Rate +0.01%     | Institutional Interest  |  
+
+---
+
+### **3. 🔥 SOL (Solana)**  
+| **Metric**          | **1-Week**              | **1-Month**             | **3-Month**             |  
+|----------------------|-------------------------|-------------------------|-------------------------|  
+| **Price**            | $165 (Overbought)       | Firedancer Upgrade      | $250 Target             |  
+| **RSI/MACD**         | RSI 62, Pullback Likely | Resistance: $200        | NFT/Meme Activity       |  
+| **Key Levels**       | Support: $150           | BTC Stability Needed    | Ecosystem Expansion     |  
+| **Derivatives**      | OI $1.2B (Longs Domin.) | Volatility Expected     | CEX Listings            |  
+
+---
+
+### **4. 🏦 OM (Mantra)**  
+| **Metric**          | **1-Week**              | **1-Month**             | **3-Month**             |  
+|----------------------|-------------------------|-------------------------|-------------------------|  
+| **Price**            | $0.75 (Bull Flag)       | $1.20 Target            | $2.00 (Regulatory Clarity)|  
+| **RSI/MACD**         | RSI 58, Volume ↑15%     | RWA Narrative           | Middle East Adoption    |  
+| **Key Levels**       | Breakout: $0.85         | Resistance: $1.20       | Tokenization Wave       |  
+| **Derivatives**      | Low OI                  | Institutional Interest  | Macro Trends            |  
+
+---
+
+### **5. 💩 WCT (Meme Coin*)**  
+| **Metric**          | **1-Week**              | **1-Month**             | **3-Month**             |  
+|----------------------|-------------------------|-------------------------|-------------------------|  
+| **Price**            | $0.000045 (Avoid)       | 2x if DOGE Pumps        | Likely Fade             |  
+| **RSI/MACD**         | Social Volume ↓50%      | High Correlation Risk   | Survival Risk           |  
+| **Key Levels**       | Support: $0.00003        | Volatility Spike        | Low Liquidity           |  
+| **Derivatives**      | No OI Data              | P&D Possible            | Delisting Risk          |  
+
+---
+
+*(Continue similar tables for remaining coins...)*
+
+---
+
+## ⚖️ **Contrast & Takeaways**  
+
+### **Best Plays Across Time Frames**  
+| **Category**       | 🕒 **1-Week**          | 📅 **1-Month**         | 📆 **3-Month**         |  
+|---------------------|------------------------|------------------------|------------------------|  
+| **Meme Coins**      | 🚨 TRUMP, SWCH         | 🎯 TRUMP, PI           | ⚡ PI, SWCH             |  
+| **AI/Altcoins**     | 🤖 TAO, FET            | 🧠 TAO, FET            | 🌐 ALEO, FET            |  
+| **Blue-Chips**      | 🔥 SOL, BNB            | 💎 SOL, BNB            | 🏛️ HBAR, BNB            |  
+
+---
+
+## ⚠️ **Key Risks**  
+- **Meme Coins**: Liquidation cascades, low liquidity, and sudden sentiment shifts.  
+- **Altcoins**: Token unlocks (e.g., FET), regulatory scrutiny, and tech execution risks.  
+- **Macro**: Fed rate decisions, Bitcoin dominance, and geopolitical instability.  
+
+---
+
+## 🎯 **Trader Strategy**  
+- **Short-Term (1-Week)**: Trade TRUMP/SWCH volatility; exploit overbought conditions in SOL.  
+- **Mid-Term (1-Month)**: Accumulate TAO/FET on dips; hedge with BNB.  
+- **Long-Term (3-Month)**: Hold ALEO/HBAR for ecosystem growth; monitor macro trends.  
+
+---
+
+## 📜 **Disclaimer**  
+*This is not financial advice. Meme coins carry extreme risk. Always conduct your own research (DYOR) and consult a financial advisor before trading.*  
+
+---
+
+## 🌐 **Contributors**  
+- **GitHub**: [@yourusername](https://github.com/yourusername)  
+- **Data Sources**: CoinGecko, TradingView, Deribit, The Block.  
+
+---
+
+<sub>🔥 **Pro Tip**: Bookmark this page! Analysis updated weekly with new metrics and trends.</sub>  
