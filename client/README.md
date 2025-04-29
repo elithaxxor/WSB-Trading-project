@@ -1,37 +1,46 @@
-# WSB Trading Analytics Dashboard
+# WSB Trading Analytics Platform
 
 ## Overview
 
-WSB Trading is a full-stack analytics dashboard for stocks and cryptocurrencies, designed for advanced retail traders and hobbyists. It provides deep analytics, real-time alerts, and multi-channel notifications, empowering users to make informed decisions based on technical indicators, projections, and sentiment data.
+WSB Trading is an advanced, extensible analytics platform for stocks and cryptocurrencies. It offers deep analytics, real-time alerts, and multi-channel notifications, empowering users to make data-driven decisions based on technical indicators, projections, and sentiment data.
+
+---
+
+## Repository Migration Notice
+
+This project was migrated to this new repository ([WSB-Trading-project](https://github.com/elithaxxor/WSB-Trading-project.git)) on 2025-04-29. For full commit history prior to this date, see the previous repository.
+
+---
 
 ## Purpose
 
-The goal of this project is to offer a highly interactive, extensible, and user-friendly platform for:
-- Monitoring real-time and historical prices of stocks and crypto assets
-- Receiving automated alerts for price, technical indicator events, and sentiment shifts
-- Visualizing advanced analytics (Sharpe Ratio, Max Drawdown, Volatility, Correlation Matrix)
-- Comparing projection models (Prophet, ARIMA, LSTM)
-- Managing and exporting alert history and notes
-- Integrating with popular notification channels (Email, Discord, Slack, Push, Telegram, SMS)
+The platform aims to provide:
 
-## How It Works
+- Real-time and historical price monitoring for stocks and crypto assets
+- Automated alerts for price, technical indicator events, and sentiment shifts
+- Advanced analytics (Sharpe Ratio, Max Drawdown, Volatility, Correlation Matrix)
+- Comparison of projection models (Prophet, ARIMA, LSTM)
+- Management and export of alert history and notes
+- Integration with popular notification channels (Email, Discord, Slack, Push, Telegram, SMS)
 
-- **Frontend:** Built with React and TypeScript, the client provides an interactive dashboard for displaying charts, managing alerts, and configuring analytics. Users can set custom alerts, view technical overlays, and annotate charts.
-- **Backend:** A Node.js/Express server manages alert scheduling, price polling, and notification dispatch. Alerts are evaluated in real-time, and triggered events are logged for audit and export.
-- **Alert System:** Users can set up alerts for price movements, technical indicator crossings (MA, RSI, MACD, etc.), and sentiment changes. Alerts are evaluated against live price feeds and technical calculations.
-- **Notification Channels:** The system supports multiple notification channels, allowing users to receive alerts via their preferred platform.
-- **Extensibility:** The architecture is modular, making it easy to add new analytics, indicators, or notification integrations.
+## Architecture
+
+- **Frontend:** React + TypeScript dashboard for charts, alerts, and analytics configuration.
+- **Backend:** Node.js/Express server for alert scheduling, price polling, and notifications.
+- **Alert System:** Supports price, indicator (MA, RSI, MACD, Bollinger Bands, etc.), and sentiment alerts.
+- **Notification Channels:** Multi-channel support for user alerts.
+- **Modularity:** Architecture is designed for easy addition of new indicators and integrations.
 
 ## Key Features
 
-- Interactive analytics dashboard for stocks and crypto
+- Interactive dashboard for stocks and crypto
 - Advanced analytics: Sharpe Ratio, Max Drawdown, Volatility, Correlation Matrix
 - Multiple projection models (Prophet, ARIMA, LSTM)
 - Visual technical indicators and overlays
 - Custom notes, export, and PDF/chart download
-- Automated price/sentiment/indicator alerts (Price, MA Cross, RSI, Volume Spike, Bollinger Bands, MACD)
+- Automated alerts (Price, MA Cross, RSI, Volume Spike, Bollinger Bands, MACD)
 - Alert history and export
-- Multi-channel notification support (Email, Discord, Slack, Push, Telegram, SMS)
+- Multi-channel notification support
 - Accessibility, dark mode, and mobile support
 - Help overlay and onboarding
 
@@ -52,19 +61,30 @@ serve -s build
 
 The app will be available at [http://localhost:5000](http://localhost:5000) by default.
 
-## Rooms for Improvement
+## Roadmap & Next Steps
 
-- **Persistence:** Currently, some alert and price data may be stored in-memory for demonstration. A production deployment should use a robust database (e.g., PostgreSQL, MongoDB) for persistence and scalability.
-- **Authentication:** User authentication and role-based access control can be added to support multi-user environments.
-- **Backtesting:** Adding historical backtesting for alerts and strategies would enhance analytics.
-- **More Integrations:** Additional notification channels and brokerage APIs can be integrated.
-- **UI/UX:** Further improvements to onboarding, accessibility, and mobile responsiveness are possible.
-- **Performance:** Optimizations for large-scale data and real-time updates can be explored.
+- **Expand Indicator Coverage:**
+  - Implement ADX, Parabolic SAR, VWAP, Volume Profile, A/D Line, CMF, Fibonacci Retracements, Ichimoku Cloud, Pivot Points, VIX, and more.
+- **Enhance Alert Logic:**
+  - Enable multi-condition alerts, indicator combinations, and divergence detection.
+  - Add backtesting for indicator-based strategies.
+- **Improve Visualization:**
+  - Add overlays for new indicators, tooltips, and in-app documentation.
+  - Show volume profile and VWAP on charts.
+- **Risk Management:**
+  - Use ATR and VIX for dynamic position sizing and alert sensitivity.
+- **Customization & Automation:**
+  - Allow scripting of custom indicator formulas and logic.
+  - Enable strategy builder and optional automated trade execution.
+- **Pattern Recognition:**
+  - Add pattern recognition (double top, head and shoulders, etc.) and highlight divergences.
+- **Documentation:**
+  - Integrate summarized guide and provide external links for each indicator.
 
 ## Recent Updates (2025-04-29)
 
-- Expanded README with detailed project overview, purpose, architecture, and improvement roadmap.
-- Added section on rooms for improvement.
+- Repository migrated to new GitHub location.
+- Expanded README with migration notice, roadmap, and updated architecture overview.
 
 See `CHANGELOG.md` for full update history.
 
